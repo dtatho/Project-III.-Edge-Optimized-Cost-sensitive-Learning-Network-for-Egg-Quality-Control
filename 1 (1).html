@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+        :root {
+            --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+        }
+
+        .start-container {
+            position: relative;
+            width: 375px;
+            height: 812px;
+            margin: 0 auto;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 9px;
+        }
+
+        .start-section {
+            position: relative;
+            width: 797px;
+            height: 529.727px;
+            margin: -43.727px 0 0 -233px;
+            z-index: 13;
+        }
+
+        .blur-background {
+            position: absolute;
+            width: 356.961px;
+            height: 356.961px;
+            top: 0;
+            left: 0;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/0d3d9302-5750-4bc0-abfe-268009e65e3b.png) no-repeat center/cover;
+            filter: blur(112.941px);
+            border-radius: 50%;
+        }
+
+        .time-display {
+            position: absolute;
+            top: calc(50% - 207.14px);
+            left: 263px;
+            color: #021433;
+            font: 500 16px/1 Inter, var(--default-font);
+            z-index: 3;
+        }
+
+        .status-icons {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            position: absolute;
+            width: 70.25px;
+            height: 13px;
+            top: 58.727px;
+            left: 516px;
+            z-index: 4;
+        }
+
+        .status-icon {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+
+        .signal-icon {
+            width: 18px;
+            height: 10px;
+            background-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/820774a1-bb03-49f0-bfad-4c2b8b04b880.png);
+        }
+
+        .wifi-icon {
+            width: 15.272px;
+            height: 10.965px;
+            background-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/9e77b127-32e0-43c8-bc40-e07f56c5e9c8.png);
+            background-size: cover;
+        }
+
+        .battery-icon {
+            width: 26.978px;
+            height: 13px;
+            background-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/e3737254-ee78-4120-b915-e4972e6d6b72.png);
+        }
+
+        .blur-background-2 {
+            position: absolute;
+            width: 356.961px;
+            height: 356.961px;
+            top: 133.727px;
+            right: 0;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/98401867-70a4-4712-8008-a110255b5034.png) no-repeat center/cover;
+            filter: blur(112.941px);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .main-image {
+            position: absolute;
+            width: 193px;
+            height: 193px;
+            top: 178.727px;
+            left: 50%;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/9dfc31dd-fc85-460d-9773-dbb632e3c5e9.png) no-repeat center/cover;
+            transform: translateX(-38.6%);
+            z-index: 12;
+        }
+
+        .secondary-image {
+            position: absolute;
+            width: 198px;
+            height: 198px;
+            top: 331.727px;
+            left: 50%;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/ecf2d2bb-b3c0-40af-bd05-8b9f96a75784.png) no-repeat center/cover;
+            transform: translateX(-39.14%);
+            z-index: 13;
+        }
+
+        .start-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 279px;
+            height: 48px;
+            margin: 133px 0 0 48px;
+            padding: 10px 24px;
+            background: rgba(84, 139, 223, 0.2);
+            border-radius: 10px;
+            z-index: 10;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .start-button-text {
+            color: #fff;
+            font: 900 14px/1.4 Inter, var(--default-font);
+            letter-spacing: -0.14px;
+        }
+
+        .bottom-indicator {
+            width: 148px;
+            height: 5px;
+            margin: 132px 0 0 114px;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/f58d78df-650b-4f30-9435-1aa14abb4edb.png) no-repeat center/cover;
+            z-index: 9;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+<section class="start-container">
+    <div class="start-section">
+        <div class="blur-background"></div>
+        <time class="time-display">9:41</time>
+        <div class="status-icons">
+            <div class="status-icon signal-icon"></div>
+            <div class="status-icon wifi-icon"></div>
+            <div class="status-icon battery-icon"></div>
+        </div>
+        <div class="blur-background-2"></div>
+        <div class="main-image" role="img" aria-label="Main decorative image"></div>
+        <div class="secondary-image" role="img" aria-label="Secondary decorative image"></div>
+    </div>
+    <button class="start-button" type="button">
+        <span class="start-button-text">Start</span>
+    </button>
+    <div class="bottom-indicator" role="presentation"></div>
+</section>
+
+</body>
+</html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        
+<style>
+:root {
+  --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+}
+
+.login-container {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 9px;
+}
+
+.background-blur {
+  position: absolute;
+  width: 356.961px;
+  height: 356.961px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/f2201851-7347-472d-8241-472aee42ff97.png) no-repeat center;
+  background-size: cover;
+  filter: blur(112.941px);
+  border-radius: 50%;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  padding: 0 20px;
+  z-index: 3;
+}
+
+.time {
+  color: #021433;
+  font-family: Inter, var(--default-font);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-image {
+  position: absolute;
+  width: 127px;
+  height: 127px;
+  top: 62.727px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/fe41ead7-0d91-4765-a2e1-2ea329406197.png) no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  width: 327px;
+  top: 168.727px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 24px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-title {
+  font-family: Inter, var(--default-font);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  background: linear-gradient(90deg, #5288da, #92bdff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+
+.form-subtitle {
+  color: #6c7278;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.social-login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  border: 1px solid #eff0f6;
+  border-radius: 10px;
+  font-family: Inter, var(--default-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1c1e;
+  cursor: pointer;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #edf1f3;
+}
+
+.divider-text {
+  padding: 0 16px;
+  color: #6c7278;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  color: #6c7278;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.form-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  background: #fff;
+  border: 1px solid #edf1f3;
+  border-radius: 10px;
+  font-family: Inter, var(--default-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1c1e;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6c7278;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.forgot-password {
+  color: #4d81e7;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-button {
+  width: 100%;
+  height: 48px;
+  background: rgba(84, 139, 223, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Inter, var(--default-font);
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.signup-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.signup-text {
+  color: #6c7278;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.signup-link {
+  color: #4d81e7;
+  font-family: Inter, var(--default-font);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+<section class="login-container">
+  <div class="background-blur"></div>
+  <header class="status-bar">
+    <span class="time">9:41</span>
+    <div class="status-icons">
+      <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/a3fee923-7fe5-4878-98a1-c5d697228590.png" alt="Signal strength" width="18" height="10">
+      <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/c0453852-b076-42cc-9d4e-e558c03fc8fe.png" alt="WiFi" width="15" height="11">
+      <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/43c746ad-4d2f-4459-b942-498e4cfebf09.png" alt="Battery" width="27" height="13">
+    </div>
+  </header>
+  <div class="profile-image" role="img" aria-label="User profile"></div>
+  <main class="login-form-container">
+    <div class="form-header">
+      <h1 class="form-title">Get Started now</h1>
+      <p class="form-subtitle">Create an account or log in to explore our app</p>
+    </div>
+    <div class="social-login-buttons">
+      <button class="social-button">
+        <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/6d25f22a-8552-4d92-ad8f-17f72769e54e.png" alt="Google logo" width="18" height="18">
+        Sign in with Google
+      </button>
+      <button class="social-button">
+        <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/c550a8f1-44ba-4715-bdc0-0bc67f96f43c.png" alt="Facebook logo" width="18" height="18">
+        Sign in with Facebook
+      </button>
+    </div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-text">Or</span>
+      <div class="divider-line"></div>
+    </div>
+    <form class="login-form">
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-input" placeholder="Loisbecket@gmail.com" required>
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="*******" required>
+      </div>
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" class="visually-hidden">
+          <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-02-17/1dfd3d3b-0a7f-443b-8c07-2dab68f4488e.png" alt="Checkbox" width="19" height="19">
+          Remember me
+        </label>
+        <a href="#" class="forgot-password">Forgot Password ?</a>
+      </div>
+      <button type="submit" class="login-button">Log In</button>
+    </form>
+    <div class="signup-prompt">
+      <span class="signup-text">Don't have an account?</span>
+      <a href="#" class="signup-link">Sign Up</a>
+    </div>
+  </main>
+</section>
+
